@@ -22,7 +22,7 @@ set /p cwPath="Path: "
 cd "%cwPath%" >nul 2>&1
 if errorlevel 1 goto :invalidPath
 REM obscure path to verify the game folder
-cd "%cwPath%\ColdWaters_Data\StreamingAssets\default\audio\music" >nul 2>&1
+type "%cwPath%\ColdWaters_Data\StreamingAssets\default\language_en\mission\single001.txt" >nul 2>&1
 if errorlevel 1 goto :invalidPath
 cd "%UserProfile%\.PBSmodUpdater"
 echo.
