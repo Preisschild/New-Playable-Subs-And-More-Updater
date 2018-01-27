@@ -48,7 +48,7 @@ copy updateMod.bat %UserProfile%\Desktop
 echo.
 echo Installation complete
 echo The updater has been copied to your desktop.
-echo Just doubleclick on the "updateMod.bat" to update the mod
+echo Just DoubleClick on the "updateMod.bat" to update the mod
 echo If you wish to uninstall, navigate to %UserProfile% and delete the .PBSmodUpdater folder
 echo Enjoy :^)
 pause
@@ -63,8 +63,8 @@ exit
 
 :invalidPath
 echo.
-echo Invalid path
-echo Are you sure it's correct?
+echo Incorrect path
+echo Please check the path and re-enter it
 pause
 echo.
 goto :askPath
