@@ -41,11 +41,18 @@ echo Making files...
 @echo cd "%%gameDir%%">>updateMod.bat
 @echo rmdir override /S /Q>>updateMod.bat
 @echo mkdir override>>updateMod.bat
-@echo Copying Files...
-@echo xcopy "%UserProfile%\.PBSmodUpdater\CW-Playable-Subs\override" .\override /E ^>nul 2^>^&1>>updateMod.bat
+@echo :copyFiles>>updateMod.bat
+@echo echo Copying Files...>>updateMod.bat
+@echo xcopy "%UserProfile%\.PBSmodUpdater\CW-Playable-Subs\override" .\override /E ^>nul 2^>^&^1>>updateMod.bat
+@echo if errorlevel 1 goto :closeIt>>updateMod.bat
 @echo echo Mod Updated.>>updateMod.bat
 @echo pause>>updateMod.bat
 @echo exit>>updateMod.bat
+@echo :closeIt>>updateMod.bat
+@echo echo Could not copy the files as the folder is open in another program ^(File Explorer or cmd likely^)>>updateMod.bat
+@echo echo Close the program then continue>>updateMod.bat
+@echo pause>>updateMod.bat
+@echo goto :copyFiles>>updateMod.bat
 copy updateMod.bat %UserProfile%\Desktop
 echo.
 echo Installation complete
