@@ -34,13 +34,15 @@ echo Making files...
 @echo cls>> updateMod.bat
 @echo cd "%%UserProfile%%\.PBSmodUpdater">> updateMod.bat
 @echo cd "CW-Playable-Subs">> updateMod.bat
+@echo echo Fetching updates...
 @echo git pull>> updateMod.bat
 @echo cd ..>> updateMod.bat
 @echo set /p gameDir=^<path.conf>> updateMod.bat
 @echo cd "%%gameDir%%">>updateMod.bat
 @echo rmdir override /S /Q>>updateMod.bat
 @echo mkdir override>>updateMod.bat
-@echo xcopy "%UserProfile%\.PBSmodUpdater\CW-Playable-Subs\override" .\override /E>>updateMod.bat
+@echo Copying Files...
+@echo xcopy "%UserProfile%\.PBSmodUpdater\CW-Playable-Subs\override" .\override /E ^>nul 2^>^&1>>updateMod.bat
 @echo echo Mod Updated.>>updateMod.bat
 @echo pause>>updateMod.bat
 @echo exit>>updateMod.bat
