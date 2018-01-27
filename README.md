@@ -1,4 +1,4 @@
-# Cold Waters Vessel Data
+# New Playable Subs & More Updater
 
 ###### by Roan Atkinson
 
